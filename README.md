@@ -44,3 +44,6 @@ If you would like to follow along from a particular point, follow these instruct
 1. Clone the repo and `cd` into it
 1. `git checkout f4f651a8a35ebb2ff38ba15771fd65c93051f942`
 1. Follow the rest of the steps above. Instead of `php artisan ecommerce:install`, migrate and seed the normal way with `php artisan migrate --seed`
+
+## How to build a helper file in laravel project?
+you can add a helpers.php file in app folder, open composer.json, and edit the part of autoload. In this case we need to use the helpers.php so we add the new type "file". We want to use the helpers by laravel, so we enter command "composer dumpautoload" to load the autoload part. Because you use the LaravelShoppingcart package, you need to check the price file what type of the price you get by this package. If you want to remove the separator, you need to open cart.php in config folder. In the end of the file, you can find the "'thousand_seperator' => ','" row. It means you would get price like 1,000 but it is a string.
