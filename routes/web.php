@@ -16,10 +16,12 @@ Route::post('/cart/switchToSaveForLater/{product}', 'CartController@switchToSave
 Route::delete('/saveForLater/{product}', 'SaveForLaterController@destroy')->name('saveForLater.destroy');
 Route::post('/saveForLater/switchToCart/{product}', 'SaveForLaterController@switchToCart')->name('saveForLater.switchToCart');
 
+Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
+Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
+
 // 緊急用的
 Route::get('empty', function () {
     Cart::instance('saveForLater')->destroy();
 });
 
-Route::view('/checkout', 'checkout');
-Route::view('/thankyou', 'thankyou');
+Route::get('/thankyou', 'ConfirmationController@index')->name('confirmation.index');

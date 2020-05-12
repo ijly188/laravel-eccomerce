@@ -47,3 +47,13 @@ If you would like to follow along from a particular point, follow these instruct
 
 ## How to build a helper file in laravel project?
 you can add a helpers.php file in app folder, open composer.json, and edit the part of autoload. In this case we need to use the helpers.php so we add the new type "file". We want to use the helpers by laravel, so we enter command "composer dumpautoload" to load the autoload part. Because you use the LaravelShoppingcart package, you need to check the price file what type of the price you get by this package. If you want to remove the separator, you need to open cart.php in config folder. In the end of the file, you can find the "'thousand_seperator' => ','" row. It means you would get price like 1,000 but it is a string.
+
+
+## use the stripe-js to build the checkout pages
+https://stripe.com/docs/payments/accept-a-payment-charges#web
+the default cart is 4242 4242 4242 4242 0422 420
+some config in services.php file, we need to insert 
+
+## use the stripe laravel package
+https://github.com/cartalyst/stripe-laravel
+command:composer require cartalyst/stripe-laravel
