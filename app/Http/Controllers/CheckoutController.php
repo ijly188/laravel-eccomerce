@@ -24,7 +24,9 @@ class CheckoutController extends Controller
         // if item is empty
         if( empty(json_decode($contents)) )
         {
-            return view('checkout')->with('success_message', "You don't have any item. We would redirect to landing-page after 3 seconds.");
+            session()->flash('warning_message', "You don't have any item. We would redirect to landing-page after 3 seconds.");
+            
+            return view('checkout');
         }
 
         return view('checkout');

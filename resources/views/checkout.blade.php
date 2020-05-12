@@ -11,10 +11,10 @@
 @section('content')
 
     <div class="container">
-        @if ( $success_message )
+        @if (session()->has('warning_message'))
             <div class="spacer"></div>
             <div class="alert alert-warning">
-                {{ $success_message }}
+                {{ session()->get('warning_message') }}
             </div>
             <script>
                 setTimeout(function(){
